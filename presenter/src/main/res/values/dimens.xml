@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_title">24dp</dimen>
+    <dimen name="button_dimension">14dp</dimen>
+    <dimen name="button_dimension_small">12dp</dimen>
+    <dimen name="content_dimension_small">14dp</dimen>
+    <dimen name="content_dimension_most_small">12dp</dimen>
+    <dimen name="content_dimension_most_most_small">10dp</dimen>
+    <dimen name="content_dimension">16dp</dimen>
+    <dimen name="content_dimension_big">18dp</dimen>
+    <dimen name="content_detail_dimension">12dp</dimen>
+    <dimen name="urine_degree_dimension">12dp</dimen>
+</resources>

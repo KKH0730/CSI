@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">객수조사</string>
+
+    <string name="admob_app_id">ca-app-pub-5069841970832836~9842761772</string>
+    <string name="admob_ad_id">ca-app-pub-5069841970832836/5903516764</string>
+    <string name="admob_ad_test_id">ca-app-pub-3940256099942544/6300978111</string>
+</resources>

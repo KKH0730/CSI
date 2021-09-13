@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MakeCsiActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/topView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgBack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/icon_arrow_last_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.8"
+                        app:layout_constraintHorizontal_bias="0.07"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="2:1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnModify"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bg_rounding_10_blue"
+                        android:text="수정"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/content_dimension"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1:0.5"
+                        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+                        app:layout_constraintHeight_percent="0.8"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnDelete"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/bg_rounding_common_gray"
+                        android:text="삭제"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/content_dimension"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1:0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.8"
+                        app:layout_constraintHorizontal_bias="0.93"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/textBranchName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:text="asdasdasd"
+                    android:textColor="@color/light_blue"
+                    android:textSize="@dimen/toolbar_title"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@drawable/cursor_drawable"
+                    android:textColorHighlight="@color/light_gray"
+                    android:textSelectHandle="@drawable/handle_drawable"
+                    android:textSelectHandleLeft="@drawable/handle_drawable"
+                    android:textSelectHandleRight="@drawable/handle_drawable"
+                    app:layout_constraintWidth_percent="0.65"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/topView" />
+
+                <View
+                    android:id="@+id/underLine"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/dot_underline"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textBranchName"
+                    app:layout_constraintWidth_percent="0.88" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgShare"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/layer_2"
+                    android:text="내보내기"
+                    app:layout_constraintTop_toTopOf="@+id/textBranchName"
+                    app:layout_constraintBottom_toBottomOf="@+id/textBranchName"
+                    app:layout_constraintDimensionRatio="0.8:1"
+                    app:layout_constraintEnd_toEndOf="@+id/underLine"
+                    app:layout_constraintWidth_percent="0.05" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btnSaveExcel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgShare"
+                    app:layout_constraintEnd_toEndOf="@+id/imgShare"
+                    app:layout_constraintStart_toStartOf="@+id/imgShare"
+                    app:layout_constraintTop_toTopOf="@+id/imgShare" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutPassengerTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintDimensionRatio="1:0.1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/underLine"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="통행객"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="남성"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="여성"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2px"
+                    android:background="#c5c5c5"
+                    app:layout_constraintEnd_toEndOf="@+id/underLine"
+                    app:layout_constraintStart_toStartOf="@+id/underLine"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutPassengerTitle" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutTeen"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutPassengerTitle"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="10대"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtPassTeenMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtPassTeenWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutTwenty"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#f5f5f5"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutTeen"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="20대"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtPassTwentyMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtPassTwentyWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutThirty"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutTwenty"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="30대"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtPassThirtyMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtPassThirtyWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutForty"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#f5f5f5"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutThirty"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="40대"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtPassFortyMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtPassFortyWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutFifty"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.487"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutForty"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="50대 이상"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtPassFiftyMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtPassFiftyWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2px"
+                    android:background="#c5c5c5"
+                    app:layout_constraintEnd_toEndOf="@+id/underLine"
+                    app:layout_constraintStart_toStartOf="@+id/underLine"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutFifty" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutCustomerTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutFifty"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="내점객"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="남성"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="여성"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2px"
+                    android:background="#c5c5c5"
+                    app:layout_constraintEnd_toEndOf="@+id/underLine"
+                    app:layout_constraintStart_toStartOf="@+id/underLine"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutCustomerTitle" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutCustomerTeen"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutCustomerTitle"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="10대"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerTeenMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerTeenWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutCustomerTwenty"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    android:background="#f5f5f5"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutCustomerTeen"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="20대"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerTwentyMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerTwentyWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutCustomerThirty"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutCustomerTwenty"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="30대"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerThirtyMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerThirtyWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutCustomerForty"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#f5f5f5"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.487"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutCustomerThirty"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:text="40대"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerFortyMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerFortyWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutCustomerFifty"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutCustomerForty"
+                    app:layout_constraintWidth_percent="0.9">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="50대 이상"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerFiftyMan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+
+                    <TextView
+                        android:id="@+id/txtCustomerFiftyWoman"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/content_dimension_big" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/admob_ad_id"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintHeight_percent="0.1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutCustomerFifty"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

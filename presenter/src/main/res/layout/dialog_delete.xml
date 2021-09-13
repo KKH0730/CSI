@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_10_rounding_white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="정말로 삭제하시겠습니까?"
+        android:textColor="@color/font_color"
+        android:textSize="14dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.85" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계속"
+        android:textColor="@color/light_blue"
+        android:textSize="@dimen/button_dimension_small"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtCancel"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/txtContinue"
+        app:layout_constraintEnd_toEndOf="@+id/txtContinue"
+        app:layout_constraintStart_toStartOf="@+id/txtContinue"
+        app:layout_constraintTop_toTopOf="@+id/txtContinue" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:text="취소"
+        android:textColor="@color/light_blue"
+        android:textStyle="bold"
+        android:textSize="@dimen/button_dimension_small"
+        app:layout_constraintBottom_toBottomOf="@+id/txtContinue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtContinue"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="@dimen/button_dimension_small"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCancel"
+        app:layout_constraintEnd_toEndOf="@+id/txtCancel"
+        app:layout_constraintStart_toStartOf="@+id/txtCancel"
+        app:layout_constraintTop_toTopOf="@+id/txtCancel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
